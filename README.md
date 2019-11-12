@@ -74,71 +74,39 @@ Steps listed are accurate as of 7-11-2019, keep in mind that AWS makes frequent 
   6) Click Apply and Click Confirm
  
 ## Setting Environment Variables
-
-Go to AWS Management Console and use Find Services to search for Elastic Beanstalk
-
-Click the multi-docker application tile
-
-Click Configuration link in Sidebar
-
-Select Modify in the Software tile
-
-Scroll down to Environment properties
-
-In another tab Open up ElastiCache, click Redis and check the box next to your cluster. Find the Primary Endpoint and copy that value but omit the :6379
-
-Set REDIS_HOST key to the primary endpoint listed above, remember to omit :6379
-
-Set REDIS_PORT to 6379
-
-Set PGUSER to postgres
-
-Set PGPASSWORD to postgrespassword
-
-In another tab, open up RDS dashboard, click databases in sidebar, click your instance and scroll to Connectivity and Security. Copy the endpoint.
-
-Set the PGHOST key to the endpoint value listed above.
-
-Set PGDATABASE to fibvalues
-
-Set PGPORT to 5432
-
-Click Apply button
+  1) Go to AWS Management Console and use Find Services to search for Elastic Beanstalk
+  2) Click the multi-docker application tile
+  3) Click Configuration link in Sidebar
+  4) Select Modify in the Software tile
+  5) Scroll down to Environment properties
+  6) In another tab Open up ElastiCache, click Redis and check the box next to your cluster. Find the Primary Endpoint and   copy that value but omit the :6379
+  7) Set REDIS_HOST key to the primary endpoint listed above, remember to omit :6379
+  8) Set REDIS_PORT to 6379
+  9) Set PGUSER to postgres
+ 10) Set PGPASSWORD to postgrespassword
+ 11) In another tab, open up RDS dashboard, click databases in sidebar, click your instance and scroll to Connectivity and Security. Copy the endpoint.
+ 12) Set the PGHOST key to the endpoint value listed above.
+ 13) Set PGDATABASE to fibvalues
+ 14) Set PGPORT to 5432
+ 15) Click Apply button
 
 ## IAM Keys for Deployment
-
-Go to AWS Management Console and use Find Services to search for IAM
-
-Click Users link in the Sidebar
-
-Click Add User button
-
-Set User name to multi-docker-deployer
-
-Set Access-type to Programmatic Access
-
-Click Next:Permissions button
-
-Select Attach existing polices directly button
-
-Search for 'beanstalk' and check all boxes
-
-Click Next:Review
-
-Add tag if you want and Click Next:Review
-
-Click Create User
-
-Copy Access key ID and secret access key for use later
+  1) Go to AWS Management Console and use Find Services to search for IAM
+  2) Click Users link in the Sidebar
+  3) Click Add User button
+  4) Set User name to multi-docker-deployer
+  5) Set Access-type to Programmatic Access
+  6) Click Next:Permissions button
+  7) Select Attach existing polices directly button
+  8) Search for 'beanstalk' and check all boxes
+  9) Click Next:Review
+ 10) Add tag if you want and Click Next:Review
+ 11) Click Create User
+ 12) Copy Access key ID and secret access key for use later
 
 ## AWS Keys in Travis
-
-Open up Travis dashboard and find your multi-docker app
-
-Click More Options, and select Settings
-
-Scroll to Environment Variables
-
-Add AWS_ACCESS_KEY and set to your AWS access key
-
-Add AWS_SECRET_KEY and set to your AWS secret key
+  1) Open up Travis dashboard and find your multi-docker app
+  2) Click More Options, and select Settings
+  3) Scroll to Environment Variables
+  4) Add AWS_ACCESS_KEY and set to your AWS access key
+  5) Add AWS_SECRET_KEY and set to your AWS secret key
